@@ -1,7 +1,7 @@
 {
     "name": "your app name",
     "description": "your app description", 
-    "runtime": "micro's runtime",
+    "runtime": "Python 3.9 ",
     "env": [
         {
             "key": "ENV_VAR_KEY",
