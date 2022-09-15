@@ -1,0 +1,12 @@
+{
+    "name": "your app name",
+    "description": "your app description", 
+    "runtime": "micro's runtime",
+    "env": [
+        {
+            "key": "ENV_VAR_KEY",
+            "description": "Human friendly description of the env var",
+            "required": false 
+        }
+    ],
+}
