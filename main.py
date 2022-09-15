@@ -9,7 +9,7 @@ drive = Drive("pics")
 # def hello_world():
 #     return "Hello World"
 
-@app.get("/download/{name}")
+@app.get("/{name}")
 def download_img(name: str):
     res = drive.get(name)
-    return StreamingResponse(res.iter_chunks(1024), media_type="image/png")
+    return StreamingResponse(res)
