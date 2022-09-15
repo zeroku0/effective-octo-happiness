@@ -17,5 +17,5 @@ def hello_world():
 
 @app.route('/download/{name}', methods=["GET"])
 def download_img():
-    res = drive.get(name)"
+    res = drive.get(name)
     return StreamingResponse(res.iter_chunks(1024))
