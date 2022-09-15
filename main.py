@@ -1,18 +1,15 @@
-import os
 from deta import Drive
-from flask import Flask
+from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
-
-app = Flask(__name__)
 
 app = FastAPI()
 drive = Drive("pics")
 
-@app.route('/', methods=["GET"])
-def hello_world():
-    return "Hello World"
+# @app.route('/', methods=["GET"])
+# def hello_world():
+#     return "Hello World"
 
-@app.route('/download/{name}', methods=["GET"])
-def download_img():
+@app.get("/download/{name}")
+def download_img(name: str):
     res = drive.get(name)
-    return StreamingResponse(res.iter_chunks(1024))
+    return StreamingResponse(res.iter_chunks(1024), media_type="image/png")
