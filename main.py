@@ -8,4 +8,4 @@ drive = Drive("pics")
 @app.get("/{name}")
 def download_img(name: str):
     res = drive.get(name)
-    return StreamingResponse(res.iter_chunks(1024))
+    return StreamingResponse(res.iter_chunks(1024), media_type="image/png")
